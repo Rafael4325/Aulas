@@ -1,0 +1,138 @@
+<?php
+
+class CalculadoraLogaritmo{
+    public function calcularLogaritmo($base,$argumento,){
+        return log ($argumento, $base);
+    }
+}
+$calculadora =  new calculadoraLogaritmo();
+$base = 2;
+$argumento = 8;
+$resultado = $calculadora->calcularLogaritmo($base,$argumento);
+echo"o logaritmo de $argumento na base $base é: " . $resultado;
+?>
+
+
+
+
+
+<?php
+class cachorro extends animal {
+   
+    function falar (){
+        echo "au,au!<br/>";
+    }
+    function comer ($comida){
+        echo "o " .$this->nome. " esta comendo ".$comida."<br/>";
+    }
+}
+
+
+
+class gato extends animal{
+    
+    
+        function falar (){
+            echo "miau,miau!<br/>";
+        }
+        function comer ($comida){
+            echo "o " .$this->nome. " esta comendo ".$comida."<br/>";
+        }
+    
+   
+}
+class passaro extends animal{
+    
+    
+    function falar (){
+        echo "bemtevi,bemtevi!<br/>";
+    }
+    function comer ($comida){
+        echo "o " .$this->nome. " esta comendo ".$comida."<br/>";
+    }
+}
+class animal{
+    public $nome;
+    public $idade;
+    public $raca;
+}
+$meuCachorro =new Cachorro();
+$meuCachorro->nome = "claudio";
+$meuCachorro->raca = "buldog";
+$meuCachorro->idade= 5;
+
+$meuCachorro->falar();
+$meuCachorro->comer("racao");
+$meugato =new gato ();
+$meugato->nome = "enner valencia";
+$meugato->raca = "siames";
+$meugato->idade= 29;
+$meugato->falar();
+$meugato->comer("racao");
+
+$meupassaro =new passaro();
+$meupassaro->nome = "Pitangus sulphuratus";
+$meupassaro->raca = "bemtevi";
+$meupassaro->idade= 89;
+
+$meupassaro->falar();
+$meupassaro->comer("racao");
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+class carro{
+    public $marca;
+    public $modelo;
+    public $cor;
+    public $ligado=false;
+    function ligar (){
+        $this->ligado=true;
+        echo "ligou o carro<br/>";
+    }
+    function desligar (){
+        $this->ligado=false;
+        echo "desligou o carro<br/>";
+    }
+    function andar (){
+       if($this->ligado==true){
+        echo "carro esta andando ";
+       }else{
+        echo "ligue o carro ";
+       }
+        
+    }
+}
+$meucarro =new carro ();
+$meucarro->marca = "lamborghini";
+$meucarro->modelo = "urus";
+$meucarro->cor= "vermelho" ;
+$meucarro->ligar();
+$meucarro->andar();
+$meucarro->desligar();
+
+
+
+
+
+
+<?php
+function soma($x,$y){
+return $x+$y;
+
+}
+
+echo "a soma é: ".soma (23453626,8927678);
