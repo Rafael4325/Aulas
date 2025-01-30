@@ -1,0 +1,50 @@
+<?php
+$listacompras = [];
+
+function adicionarItem($item) {
+    global $listacompras;
+    array_push($listacompras, $item);
+    echo "Item adicionado com sucesso!\n";
+}
+
+while (true) {
+    // Exibe o menu para o usuário
+    echo "Escolha uma opção:\n";
+    echo "1. Adicionar itens\n";
+    echo "2. Remover itens\n";
+    echo "3. Listar itens\n";
+    echo "4. Consultar quantidade\n";
+    echo "5. Sair\n";
+
+    $opcao = readline("Digite uma opção: ");
+
+    if ($opcao < 1 || $opcao > 5) {
+        echo "Opção inválida, digite alguma opção do menu.\n";
+        continue; // Volta para o início do loop
+    }
+
+    if ($opcao == 1) {
+        $item = readline("Digite o nome do item: ");
+        adicionarItem($item);
+    }
+
+    if ($opcao == 2) {
+        if (empty($listacompras)) {
+            echo "Sem itens na lista para remover.\n";
+        } else {
+            $itemRemovido = array_pop($listacompras);
+            echo "Item removido com sucesso: $itemRemovido\n";
+        }
+    }
+
+    if ($opcao == 3) {
+    	if (empty($listacompras)) {
+        echo "Sua lista está vazia!\n";
+    } else {
+        foreach ($listacompras as $item) {
+            echo " - " . $item . PHP_EOL; // Corrigido
+          }
+      }
+  }
+
+}
